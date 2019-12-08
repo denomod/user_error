@@ -19,7 +19,7 @@ It gives you:
 import UserError from "https://deno.land/x/user_error/mod.ts";
 
 class MyError extends UserError {
-  constructor(message) {
+  constructor(message: string) {
     super(message);
   }
 }
@@ -31,12 +31,12 @@ To see the problems UserError solves for you, let's try to subclass `Error` dire
 
 ```ts
 class MyError extends Error {
-  constructor(message) {
+  constructor(message: string) {
     super(message);
   }
 }
 
-const boom = () => {
+const boom = (): never => {
   throw new MyError("boom!");
 };
 
@@ -76,12 +76,12 @@ UserError aims to fix these problems. Now, when we run the example it looks like
 import UserError from "https://deno.land/x/user_error/mod.ts";
 
 class MyError extends UserError {
-  constructor(message) {
+  constructor(message: string) {
     super(message);
   }
 }
 
-const boom = () => {
+const boom = (): never => {
   throw new MyError("boom!");
 };
 
