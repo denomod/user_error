@@ -14,8 +14,8 @@ UserError.prototype = Object.create(Error.prototype, {
     value: UserError,
     configurable: true,
     enumerable: false,
-    writable: true
-  }
+    writable: true,
+  },
 });
 
 Object.setPrototypeOf(UserError, Error);
