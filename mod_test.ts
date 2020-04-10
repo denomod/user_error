@@ -1,18 +1,17 @@
-import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertEquals } from "https://deno.land/std/testing/asserts.ts";
 
 import UserError from "./mod.ts";
 
-test({
+Deno.test({
   name: "test UserError",
   fn(): void {
     const error = new UserError("Bang!");
     assertEquals(error.name, "UserError");
     assertEquals(error.message, "Bang!");
-  }
+  },
 });
 
-test({
+Deno.test({
   name: "test UserError subclass instance",
   fn(): void {
     class MyError extends UserError {
@@ -23,5 +22,5 @@ test({
     const error = new MyError("Bang!");
     assertEquals(error.name, "MyError");
     assertEquals(error.message, "Bang!");
-  }
+  },
 });
