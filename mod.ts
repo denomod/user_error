@@ -1,4 +1,4 @@
-function UserError(message: string) {
+function UserError(this: Error, message: string) {
   Error.call(this);
 
   if ((Error as any).captureStackTrace) {
